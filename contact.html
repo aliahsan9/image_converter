@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Contact FalconConvert — reach out for feedback and support." />
+  <title>Contact — FalconConvert</title>
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/theme.js" defer></script>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <span class="brand-name">FalconConvert</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-3" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container content card">
+    <h1>Contact Us</h1>
+    <p class="muted">We'd love your feedback. Fill the form below or reach out via social links.</p>
+
+    <form id="contact-form" class="contact-form" onsubmit="event.preventDefault(); alert('Thanks — this demo site does not send messages.');">
+      <label class="field">
+        <span>Name</span>
+        <input type="text" placeholder="Your name" required />
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input type="email" placeholder="you@example.com" required />
+      </label>
+
+      <label class="field">
+        <span>Message</span>
+        <textarea placeholder="Your message" rows="6" required></textarea>
+      </label>
+
+      <div class="actions">
+        <button class="btn btn-primary">Send Message</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer minimal">
+    <div class="container">
+      <small class="muted">© <span id="year-3"></span> FalconConvert</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year-3').textContent = new Date().getFullYear();</script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>

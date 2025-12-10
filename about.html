@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="About FalconConvert — client-side image converter." />
+  <title>About — FalconConvert</title>
+  <link rel="icon" href="/assets/logo.png" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script src="/js/theme.js" defer></script>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <div class="brand">
+        <img src="/assets/logo.png" alt="Logo" class="logo" />
+        <span class="brand-name">FalconConvert</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle-2" class="theme-toggle" aria-label="Toggle theme">🌙</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container content card">
+    <h1>About FalconConvert</h1>
+    <p class="muted">
+      FalconConvert is a lightweight, privacy-focused image converter. All processing happens in your browser using modern web APIs and the Canvas API — there's no upload, no account, and no tracking.
+    </p>
+
+    <section>
+      <h2>Our Mission</h2>
+      <p>Provide a fast, secure and beautiful way to convert images client-side with a premium UI and excellent UX.</p>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <ul>
+        <li>Convert between common formats (JPG, PNG, WEBP, BMP, SVG (raster embed))</li>
+        <li>Drag & drop, preview, quality control</li>
+        <li>Light & dark mode with saved preferences</li>
+        <li>PWA friendly — offline ready</li>
+      </ul>
+    </section>
+
+    <a class="btn btn-primary" href="index.html">Open Converter</a>
+  </main>
+
+  <footer class="footer minimal">
+    <div class="container">
+      <small class="muted">© <span id="year-2"></span> FalconConvert</small>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year-2').textContent = new Date().getFullYear();</script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

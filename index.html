@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Convert images instantly client-side — JPG, PNG, WEBP & more. No upload required. Fast, secure, offline-ready." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <title>Image Converter — Instant, Client-side</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Image Converter — Instant, Client-side" />
+  <meta property="og:description" content="Convert images instantly client-side — JPG, PNG, WEBP & more. No upload required." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon / Logo -->
+  <link rel="icon" href="/assets/logo.png" />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <!-- Optional: GSAP CDN for extra animations (not required) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+
+  <!-- Theme loader (so initial paint respects saved theme) -->
+  <script src="/js/theme.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Logo" class="logo" />
+        <span class="brand-name">FalconConvert</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="terms.html">Terms</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Theme toggle -->
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+          <span class="sun">☀️</span><span class="moon">🌙</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container main-grid">
+    <!-- Hero -->
+    <section class="hero card">
+      <h1 class="headline">Convert Your Images Instantly — JPG, PNG, WEBP & More</h1>
+      <p class="subhead">Fast, secure, client-side image conversion. No upload required.</p>
+      <div class="hero-cta">
+        <a href="#converter" class="btn btn-primary">Start Converting</a>
+        <a href="about.html" class="btn btn-ghost">Learn More</a>
+      </div>
+    </section>
+
+    <!-- Converter Card -->
+    <section id="converter" class="converter card">
+      <h2 class="card-title">Image Converter</h2>
+
+      <!-- Upload area -->
+      <div id="drop-area" class="drop-area">
+        <div class="drop-content">
+          <input id="file-input" type="file" accept="image/*" hidden />
+          <p class="muted">Drag & Drop image here — or</p>
+          <button id="choose-file" class="btn">Choose file</button>
+          <div class="muted small">Supported inputs: JPG, PNG, WEBP, GIF, BMP, etc.</div>
+        </div>
+      </div>
+
+      <!-- Options Row -->
+      <div class="options-row">
+        <label class="field">
+          <span>Output format</span>
+          <select id="format-select">
+            <option value="image/png">PNG</option>
+            <option value="image/jpeg">JPEG</option>
+            <option value="image/webp">WEBP</option>
+            <option value="image/svg+xml">SVG (raster embed)</option>
+            <option value="image/bmp">BMP</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Quality <small id="quality-label">80</small></span>
+          <input id="quality" type="range" min="0" max="100" value="80" />
+        </label>
+
+        <label class="field">
+          <span>Scale</span>
+          <input id="scale" type="range" min="20" max="200" value="100" />
+        </label>
+      </div>
+
+      <!-- Convert actions -->
+      <div class="actions">
+        <button id="convert-btn" class="btn btn-primary" disabled>Convert</button>
+        <button id="download-btn" class="btn btn-outline" disabled>Download Converted</button>
+        <div id="file-size" class="file-size muted">No file selected</div>
+      </div>
+
+      <!-- Preview -->
+      <div class="preview-row">
+        <div class="preview card small">
+          <h3>Before</h3>
+          <div class="img-wrap" id="before-wrap"><img id="before-img" alt="Before preview" /></div>
+          <div class="muted small" id="before-info">—</div>
+        </div>
+
+        <div class="preview card small">
+          <h3>After</h3>
+          <div class="img-wrap" id="after-wrap"><img id="after-img" alt="After preview" /></div>
+          <div class="muted small" id="after-info">—</div>
+        </div>
+      </div>
+
+      <div class="muted tiny">All conversions happen locally in your browser. No upload, no tracking.</div>
+    </section>
+
+    <!-- Features -->
+    <aside class="features card">
+      <h3>Why FalconConvert?</h3>
+      <ul class="feature-list">
+        <li>Client-side conversion — privacy-first</li>
+        <li>Preview & size compare before download</li>
+        <li>Dark & Light modes, offline-ready</li>
+        <li>Drag & Drop + responsive UI</li>
+      </ul>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="/assets/logo.png" alt="Logo" class="logo-sm" />
+        <p class="muted small">FalconConvert · Convert images instantly on your device</p>
+      </div>
+
+      <nav>
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="terms.html">Terms</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h4>Connect</h4>
+        <div class="socials">
+          <!-- replace with real links/icons -->
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="GitHub">🐙</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>© <span id="year"></span> FalconConvert. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="/js/converter.js" defer></script>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
